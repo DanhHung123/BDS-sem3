@@ -88,3 +88,107 @@
 #error-noti.active {
 	display: block;
 }
+
+.profile {
+	padding-top: 105px;
+	background-color: #d8e6cc;
+}
+
+.profile-container {
+	max-width: 1200px;
+	margin: 30px auto;
+	background-color: white;
+	padding: 30px;
+	display: flex;
+}
+.profile-img {
+	width: 25%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	border-right: 1px solid #82bb4e;
+}
+.profile-img img {
+	display: block;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.profile-img div {
+	text-align: center;
+	margin-top: 30px;
+}
+.profile-img div p {
+	font-weight: 600;
+	font-size: 18px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+.profile-img div span {
+	opacity: 0.7;
+}
+.profile-description {
+	width: 40%;
+	border-right: 1px solid #82bb4e;
+	padding: 0 40px;
+}
+.profile-description-btn {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+.profile-description-btn button {
+	padding: 10px 20px;
+	background-color: #82bb4e;
+	color: white;
+	border: none;
+	outline: none;
+}
+.profile-description-item label {
+	font-size: 17px;
+	font-weight: 500;
+}
+.profile-description-item input {
+	pointer-events: none;
+	user-select: none;
+}
+.profile-conect {
+	width: 35%;
+	padding: 40px;
+}
+
+.profile-conect-des {
+	margin-top: 30px;
+}
+.profile-conect-des > div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #82bb4e;
+	padding-bottom: 10px;
+	margin-top: 10px;
+}
+.profile-conect-des > div:last-child {
+	border: none;
+}
+.profile-conect-des > div p {
+	font-size: 16px;
+	margin-left: 15px;
+	margin-bottom: 0;
+}
+.profile-conect-des > div span {
+	margin-right: 15px;
+	opacity: 0.7;
+}
+.profile-conect-btn {
+	text-align: right;
+}
+.profile-conect-btn button {
+	font-size: 16px;
+	font-weight: 600;
+	background-color: white;
+	padding: 5px 15px;
+	border: #82bb4e solid 2px;
+}
