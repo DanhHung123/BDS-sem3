@@ -246,3 +246,252 @@
 		visibility: visible;
 	}
 }
+
+.space_top {
+	padding-top: 105px;
+}
+
+.search-head {
+	display: flex;
+	box-shadow: 0 10px 10px #d2d2d2;
+	margin: 0;
+}
+.select-search-item {
+	width: 14%;
+	position: relative;
+}
+.select-search-item select {
+	padding: 30px 40px 10px 40px;
+	font-size: 16px;
+	font-weight: 600;
+	width: 100%;
+	background-image: none;
+}
+.select-search-item span {
+	position: absolute;
+	top: 2px;
+	left: 20px;
+}
+.select-search-item span i {
+	opacity: 0.7;
+}
+.select_buy_sell input {
+	opacity: 0;
+	width: 20px;
+	visibility: hidden;
+}
+.select_buy_sell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.select_buy_sell > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.select_buy_sell > div input:checked + label {
+	background-color: #505050;
+	color: white;
+}
+.select_buy_sell > div label {
+	border: 1px solid #505050;
+	border-radius: 5px;
+	width: 80px;
+	padding: 10px 0;
+	text-align: center;
+	margin: 0;
+	font-weight: 600;
+}
+.select-serch-inpu {
+	width: 30%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 0 30px;
+}
+.select-serch-inpu span {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 40px;
+}
+.select-serch-inpu input {
+	background-color: #f2f2f2;
+	padding: 5px 35px;
+	border-radius: 5px;
+}
+
+/* Search */
+img {
+	display: block;
+}
+.search-main {
+	display: flex;
+}
+.search-main {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.search-main-left {
+	width: 70%;
+}
+.item-seach:hover {
+	box-shadow: 0 0 5px #dedede;
+}
+.item-seach-img {
+	height: 235px;
+	display: flex;
+}
+.item-seach-img > img {
+	width: 70%;
+	object-fit: cover;
+	border: 2px solid white;
+}
+.item-seach-img-side {
+	width: 30%;
+	height: 100%;
+}
+.item-seach-img-side > img {
+	width: 100%;
+	height: 50%;
+	object-fit: cover;
+}
+.item-seach-img-side > div {
+	height: 50%;
+	display: flex;
+}
+.item-seach-img-side > div img {
+	width: 50%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.item-seach-content {
+	padding: 20px;
+	border: 1px solid #f0f0f0;
+}
+.item-seach-content h4 {
+	font-size: 14px;
+	font-weight: 600;
+}
+.item-seach-content > div {
+	color: #505050;
+}
+.item-seach-content > div span {
+	font-size: 14px;
+	margin: 10px;
+}
+
+.item-seach-content > div span.focus-span {
+	font-size: 16px;
+	font-weight: bold;
+	color: #82bb4e;
+}
+.item-seach-content p {
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: normal !important;
+	color: #505050;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden !important;
+	-webkit-line-clamp: 2;
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+.item-search-foot {
+	display: flex;
+	justify-content: space-between;
+	padding: 16px;
+	border: 1px solid #f0f0f0;
+}
+
+.item-search-foot .item-search-foot-l img {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.item-search-foot-l {
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+}
+.item-search-foot-l p {
+	font-weight: bold;
+	margin-bottom: 0;
+}
+.item-search-foot-l span {
+	opacity: 0.7;
+}
+
+.item-search-foot-btn button {
+	padding: 5px 10px;
+	border: none;
+	outline: none;
+	background-color: #82bb4e;
+	color: white;
+	font-weight: 600;
+	border-radius: 5px;
+	margin-left: 15px;
+}
+.item-search-foot-btn button span {
+	margin-right: 10px;
+}
+.item-search-foot-btn button:last-child {
+	background-color: white;
+	color: #505050;
+	border: 1px solid #505050;
+}
+
+.item-seach {
+	margin: 50px 0;
+}
+
+.search-main-right {
+	width: 30%;
+}
+
+.search-main-right-item {
+	border: 1px solid #f0f0f0;
+	padding: 15px;
+	border-radius: 8px;
+	max-width: 210px;
+	margin: 0 auto;
+}
+.search-main-right-item h3 {
+	font-size: 14px;
+	font-weight: bold;
+}
+.search-main-right-item h4 {
+	font-size: 14px;
+}
+.search-main-right-item:first-child {
+	margin-top: 50px;
+}
+.search-main-right-item {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.search-main-right-item.gray-b {
+	background-color: #f2f2f2;
+}
+
+.search-pagination {
+	display: flex;
+	justify-content: center;
+	margin: 50px 0;
+}
+.search-pagination-container a {
+	padding: 8px 15px;
+	border: 1px solid #c3c3c3;
+	margin: 0;
+	font-weight: bold;
+}
+.search-pagination-container a.chose {
+	background-color: #82bb4e;
+	color: white;
+}
