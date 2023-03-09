@@ -1167,3 +1167,31 @@ img {
 	margin-right: 10px;
 	color: #82bb4e;
 }
+
+.recharge-main {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 16px 30px;
+}
+.recharge-main-item {
+	border: 1px solid rgb(242, 242, 242);
+	box-shadow: rgb(44 44 44 / 4%) 0px 4px 6px;
+	border-radius: 8px;
+	padding: 20px 16px;
+	display: flex;
+	align-items: center;
+	max-height: 72px;
+}
+.recharge-main-item:hover {
+	box-shadow: rgb(44 44 44 / 8%) 0px 4px 16px;
+}
+.recharge-main-item img {
+	object-fit: cover;
+	width: 32px;
+	height: 32px;
+}
+.recharge-main-item span {
+	font-size: 14px;
+	color: #2c2c2c;
+	margin-left: 16px;
+}
