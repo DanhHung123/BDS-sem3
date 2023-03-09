@@ -219,7 +219,9 @@
         <h3>Số dư tài khoản</h3>
         <div class="post-banlance-item">
           <p>Còn dư</p>
-          <span>500000</span>
+          <span id="postBanlanceSpan"></span>
+          <!-- Render dữ liệu số dư vào input dưới (thẻ span trên lấy dữ liệu từ input này) -->
+          <input id="postBalance" type="number" value="500000">
         </div>
         <div class="post-banlance-item">
           <p>Loại tài khoản</p>
@@ -404,6 +406,8 @@
         <div class="post-content-item post-total-payment">
 
         </div>
+        <input id="post-total-back" type="number" disabled>
+
       </form>
     </div>
   </section>

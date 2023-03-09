@@ -80,12 +80,14 @@
 	opacity: 0.5;
 	cursor: not-allowed;
 }
-#error-noti {
+#error-noti,
+#postFormCheckNoti {
 	color: rgb(240, 72, 72);
 	display: none;
 	font-size: 15px;
 }
-#error-noti.active {
+#error-noti.active,
+#postFormCheckNoti.active {
 	display: block;
 }
 
@@ -1013,8 +1015,13 @@ img {
 .post-sum-btn:last-child {
 	border: none;
 }
-.post-sum-btn.flex-cen {
+.flex-cen {
+	display: flex;
+	align-items: center;
 	justify-content: center;
+}
+.post-sum-btn.re {
+	display: block;
 }
 
 /* list post */
@@ -1194,4 +1201,14 @@ img {
 	font-size: 14px;
 	color: #2c2c2c;
 	margin-left: 16px;
+}
+#post-total-back {
+	visibility: hidden;
+}
+#postBtnSub.active {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+#postBalance {
+	display: none;
 }

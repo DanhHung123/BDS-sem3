@@ -82,6 +82,9 @@ window.addEventListener("scroll", () => {
 const postDay = document.querySelectorAll(".post-day-box input");
 const postType = document.querySelectorAll(".post-type-box input");
 const postPayBox = document.querySelector(".post-total-payment");
+const postTotalBack = document.querySelector("#post-total-back");
+const postBalance = document.querySelector("#postBalance");
+const postBanlanceSpan = document.querySelector("#postBanlanceSpan");
 let dayValue = 10;
 let typeValue = "Tin thường";
 let priceValue = 2182;
@@ -124,11 +127,28 @@ function calcTotalPost(day, type, price) {
 			currency: "VND",
 		})}</h3>
 	</div>
-	<div class="post-sum-btn flex-cen">
-		<button type="submit">Thanh toán và đăng tin <span><i class="fa fa-chevron-right"
-					aria-hidden="true"></i></span></button>
+	<div class="post-sum-btn re">
+		<div>
+			<span id="postFormCheckNoti">Số dư không đủ vui lòng nạp thêm !</span>
+		</div>	
+		<div class="flex-cen">
+			<button type="submit" id="postBtnSub">Thanh toán và đăng tin <span><i class="fa fa-chevron-right"
+			aria-hidden="true"></i></span></button>
+		</div>
 	</div>`;
 	postPayBox.innerHTML = postTotalHtml;
+	postTotalBack.value = day * price;
+	postBanlanceSpan.textContent = new Number(postBalance.value);
+
+	let postFormCheckNoti = document.querySelector("#postFormCheckNoti");
+	let postBtnSub = document.querySelector("#postBtnSub");
+	if (new Number(postTotalBack.value) > new Number(postBalance.value)) {
+		postFormCheckNoti.classList.add("active");
+		postBtnSub.classList.add("active");
+		postBtnSub.onclick = (e) => {
+			e.preventDefault();
+		};
+	}
 }
 
 if (postDay) {
