@@ -39,16 +39,33 @@ const boxUp = document.querySelector("#box-img-up");
 
 function renderIngUpload(arr) {
 	let listUpHtml = [];
-	arr.forEach((item) => {
+	arr.forEach((item, index) => {
 		let itemHmtl = `
 		<div class="box-img-up-item">
 			<img src="${item}" alt="">
-			<div class="btn-click-close"><i class="fa fa-times" aria-hidden="true"></i></div>
+			<div class="btn-click-close" onClick="deleteImgUp(${index})"><i class="fa fa-times" aria-hidden="true"></i></div>
 		</div>`;
 		listUpHtml.push(itemHmtl);
 	});
 
 	boxUp.innerHTML = listUpHtml.join(" ");
+}
+function deleteImgUp(index) {
+	let dtTranfer = new DataTransfer();
+	for (let i = 0; i < listImgUp.files.length; i++) {
+		const file = listImgUp.files[i];
+		if (index !== i) {
+			dtTranfer.items.add(file);
+		}
+	}
+	listImgUp.files = dtTranfer.files;
+	const files = listImgUp.files;
+	const fileURLs = [];
+	for (let i = 0; i < files.length; i++) {
+		fileURLs.push(URL.createObjectURL(files[i]));
+	}
+	renderIngUpload(fileURLs);
+	console.log(listImgUp.files);
 }
 
 if (listImgUp) {
@@ -61,6 +78,8 @@ if (listImgUp) {
 		renderIngUpload(fileURLs);
 	};
 }
+
+function selectImgUp() {}
 
 const postMenu = document.querySelector(".post-menu");
 const postSection = document.querySelector(".post-section");
@@ -85,9 +104,9 @@ const postPayBox = document.querySelector(".post-total-payment");
 const postTotalBack = document.querySelector("#post-total-back");
 const postBalance = document.querySelector("#postBalance");
 const postBanlanceSpan = document.querySelector("#postBanlanceSpan");
-let dayValue = 10;
-let typeValue = "Tin thường";
-let priceValue = 2182;
+let dayValue;
+let typeValue;
+let priceValue;
 const listType = {
 	thuong: "Tin thường",
 	bac: "VIP Bạc",
@@ -138,11 +157,11 @@ function calcTotalPost(day, type, price) {
 	</div>`;
 	postPayBox.innerHTML = postTotalHtml;
 	postTotalBack.value = day * price;
-	postBanlanceSpan.textContent = new Number(postBalance.value);
+	postBanlanceSpan.textContent = Number(postBalance.value);
 
 	let postFormCheckNoti = document.querySelector("#postFormCheckNoti");
 	let postBtnSub = document.querySelector("#postBtnSub");
-	if (new Number(postTotalBack.value) > new Number(postBalance.value)) {
+	if (Number(postTotalBack.value) > Number(postBalance.value)) {
 		postFormCheckNoti.classList.add("active");
 		postBtnSub.classList.add("active");
 		postBtnSub.onclick = (e) => {
@@ -151,15 +170,31 @@ function calcTotalPost(day, type, price) {
 	}
 }
 
+function loopSelectValue(element) {
+	let reValue;
+	for (let i = 0; i < element.length; i++) {
+		if (element[i].checked === true) {
+			reValue = element[i].value;
+		}
+	}
+	if (reValue > 0 || reValue != "") return reValue;
+	return false;
+}
+
+if (postDay && postType) {
+	dayValue = Number(loopSelectValue(postDay)) || 10;
+	typeValue = loopSelectValue(postType) || "Tin thường";
+	priceValue = listTypePrice[typeValue] || 2182;
+}
+
 if (postDay) {
 	postDay.forEach((item) => {
 		item.addEventListener("change", (e) => {
-			dayValue = new Number(e.target.value);
+			dayValue = Number(e.target.value);
 			calcTotalPost(dayValue, typeValue, priceValue);
 		});
 	});
 }
-
 if (postType) {
 	postType.forEach((item) => {
 		item.addEventListener("change", (e) => {
